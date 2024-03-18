@@ -22,6 +22,4 @@ Route::get('/test', function () {
     return view('welcome');
 });
 
-Route::get('/test/app', function () {
-    return view('welcome');
-});
+
