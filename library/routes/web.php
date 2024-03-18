@@ -21,5 +21,8 @@ Route::get('/', function () {
 Route::get('/test', function () {
     return view('welcome');
 });
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> da4bbc37372009fda6125399776f6c8e7caa1177
