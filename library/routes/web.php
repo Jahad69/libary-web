@@ -31,3 +31,13 @@ Route::middleware([
 
 
 route::get('/home',[Admincontroller::class,'index']);
+
+route::get('/category_page',[Admincontroller::class,'category_page']);
+
+route::post('/add_category',[Admincontroller::class,'add_category']);
+
+route::get('/cat_delete/{id}',[Admincontroller::class,'cat_deletes']);
+
+route::get('/edit_category/{id}',[Admincontroller::class,'edit_category']);
+
+route::post('/update_category/{id}',[Admincontroller::class,'update_category']);

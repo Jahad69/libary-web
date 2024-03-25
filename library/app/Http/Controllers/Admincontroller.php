@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Models\User;
 
+use App\Models\Category;
+
 use Illuminate\Support\Facades\Auth;
 
 class Admincontroller extends Controller
@@ -31,6 +33,50 @@ class Admincontroller extends Controller
         {
             return redirect()->back();
         }
+    }
+
+    public function category_page()
+    {
+        $data = Category::all();
+
+        return view ('admin.category_page', compact('data'));
+    }
+
+    public function add_category(Request $request)
+    {
+        $data = new Category;
+        $data->cat_title = $request->category;
+        $data->save();
+        return redirect()->back()->with('message', 'Category add successfully');
+    }
+
+    public function cat_delete($id)
+    {
+
+        $data = Category:: find ($id);
+
+        $data->delete();
+
+        return redirect()-> back();
+    }
+
+    public function edit_category($id)
+    {
+
+        $data = Category:: find ($id);
+
+        return view ('admin.edit_category', compact('data'));
+    }
+
+    public function update_category(Request $request,$id)
+    {
+        $data = Category:: find ($id);
+
+        $data->cat_title = $request->cat_name;
+
+        $data->save();
+
+        return redirect ('/category_page')->with('message','category Update Successfully');
     }
 
 }
