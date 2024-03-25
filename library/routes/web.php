@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
     use App\Http\Controllers\Admincontroller;
 
+    use App\Http\Controllers\HomeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,9 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+route::get('/',[HomeController::class,'index']);
 
 Route::middleware([
     'auth:sanctum',
