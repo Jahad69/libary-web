@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Models\User;
 
+use App\Models\Book;
+
 use App\Models\Category;
 
 use Illuminate\Support\Facades\Auth;
@@ -23,9 +25,10 @@ class Admincontroller extends Controller
                 return view ('admin.index');
             }
 
-            else if ($user_type == 'user ');
+            else if ($user_type == 'user');
             {
-                return view ('home.index');
+                $data = Book::all();
+                return view ('home.index',compact('data'));
             }
         }
 
@@ -78,5 +81,116 @@ class Admincontroller extends Controller
 
         return redirect ('/category_page')->with('message','category Update Successfully');
     }
+
+    public function add_book(){
+        $data = Category::all();
+
+        return view('admin.add_book',compact('data'));
+    }
+
+    public function store_book(Request $request){
+        
+        $data = new Book;
+
+        $data->title = $request->book_name;
+        $data->author_name = $request->author_name;
+        $data->price = $request->price;
+        $data->description = $request->description;
+        $data->quantity = $request->quantity;
+        $data->category_id = $request->category;
+
+        $book_img = $request->book_img;
+
+        if($book_img){
+
+            $book_image_name = time().'.'.$book_img->getClientOriginalExtension();
+
+            $request->book_img->move('book',$book_image_name);
+
+            $data->book_img = $book_image_name;
+
+        }
+
+        $author_img = $request->author_img;
+
+        if($author_img){
+
+            $author_image_name = time().'.'.$author_img->getClientOriginalExtension();
+
+            $request->author_img->move('author',$author_image_name);
+
+            $data->author_img = $author_image_name;
+
+        }
+
+        $data->save();
+
+        return redirect()->back();
+
+    }
+
+    public function show_book(){
+        $book = Book::all();
+
+        return view('admin.show_book',compact('book'));
+    }
+    public function book_delete($id){
+
+        $data = Book::find($id);
+
+        $data->delete();
+
+        return redirect()->back()->with('message','Book Deleted Successfully!');
+    }
+
+    public function edit_book($id){
+
+        $data = Book::find($id);
+
+        $category = Category::all();
+
+        return view('admin.edit_book',compact('data','category'));
+    }
+
+    public function update_book(Request $request,$id){
+        $data = Book::find($id);
+
+        $data->title = $request->title;
+        $data->author_name = $request->author_name;
+        $data->price = $request->price;
+        $data->description = $request->description;
+        $data->quantity = $request->quantity;
+        $data->category_id = $request->category;
+
+        $book_img = $request->book_img;
+
+        if($book_img){
+
+            $book_image_name = time().'.'.$book_img->getClientOriginalExtension();
+
+            $request->book_img->move('book',$book_image_name);
+
+            $data->book_img = $book_image_name;
+
+        }
+
+        $author_img = $request->author_img;
+
+        if($author_img){
+
+            $author_image_name = time().'.'.$author_img->getClientOriginalExtension();
+
+            $request->author_img->move('author',$author_image_name);
+
+            $data->author_img = $author_image_name;
+
+        }
+
+        $data->save();
+
+        return redirect('/show_book')->with('message','Book Updated Successfully!');
+
+    }
+
 
 }

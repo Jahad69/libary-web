@@ -41,3 +41,17 @@ route::get('/cat_delete/{id}',[Admincontroller::class,'cat_deletes']);
 route::get('/edit_category/{id}',[Admincontroller::class,'edit_category']);
 
 route::post('/update_category/{id}',[Admincontroller::class,'update_category']);
+
+route::get('/add_book',[Admincontroller::class,'add_book']);
+
+route::post('/store_book',[Admincontroller::class,'store_book']);
+
+route::get('/show_book',[Admincontroller::class,'show_book']);
+
+route::get('/book_delete/{id}',[Admincontroller::class,'book_delete']);
+
+route::get('/edit_book/{id}',[Admincontroller::class,'edit_book']);
+
+route::post('/update_book/{id}',[Admincontroller::class,'update_book']);
+
+route::get('/borrow_books/{id}',[HomeController::class,'borrow_books']);

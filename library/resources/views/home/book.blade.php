@@ -19,33 +19,40 @@
         </div>
         <div class="col-lg-12">
           <div class="row grid">
+
+            @foreach($data as $data)
+          
             <div class="col-lg-6 currently-market-item all msc">
               <div class="item">
                 <div class="left-image">
-                  <img src="assets/images/book1.webp" alt="" style="border-radius: 20px; min-width: 195px;">
+                  <img src="book/{{$data->book_img}}" alt="" style="border-radius: 20px; width: 200px;">
                 </div>
                 <div class="right-content">
-                  <h4>Sarah Maas</h4>
+                  <h4>{{$data->title}}</h4>
                   <span class="author">
                     <img src="assets/images/author.jpg" alt="" style="max-width: 50px; border-radius: 50%;">
-                    <h6>Robert T Kiyosaki</h6>
+                    <h6>{{$data->author_name}}</h6>
                   </span>
                   <div class="line-dec"></div>
                   <span class="bid">
-                    Current Available<br><strong>10</strong><br> 
+                    Current Available<br><strong>{{$data->quantity}}</strong><br> 
                   </span>
-                  <span class="ends">
+                  <!-- <span class="ends">
                     Total<br><strong>20</strong><br>
-                  </span>
+                  </span> -->
                   <div class="text-button">
-                    <a href="details.html">View Item Details</a>
+                    <a href="">View Book Details</a>
+                  </div>
+                  <br>
+                  <div>
+                    <a class="btn btn-primary" href="{{url('borrow_books',$data->id)}}">Apply to Borrow</a>
                   </div>
                 </div>
               </div>
             </div>
             
-
-            <div class="col-lg-6 currently-market-item all msc">
+            @endforeach
+            <!-- <div class="col-lg-6 currently-market-item all msc">
               <div class="item">
                 <div class="left-image">
                   <img src="assets/images/book2.webp" alt="" style="border-radius: 20px; min-width: 195px;">
@@ -69,9 +76,6 @@
                 </div>
               </div>
             </div>
-
-
-
             <div class="col-lg-6 currently-market-item all msc">
               <div class="item">
                 <div class="left-image">
@@ -96,9 +100,6 @@
                 </div>
               </div>
             </div>
-
-
-
             <div class="col-lg-6 currently-market-item all msc">
               <div class="item">
                 <div class="left-image">
@@ -122,7 +123,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
 
 
           </div>
