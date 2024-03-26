@@ -231,6 +231,8 @@ class Admincontroller extends Controller
 
         $book_qty = $book->quantity - '1';
 
+        $book->quantity = $book_qty;
+
         $book->save();
 
         return redirect()->back();
@@ -261,6 +263,8 @@ class Admincontroller extends Controller
         $book = Book::find($bookid);
 
         $book_qty = $book->quantity + '1';
+
+        $book->quantity = $book_qty;
 
         $book->save();
 
