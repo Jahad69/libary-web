@@ -13,27 +13,31 @@
 
   <!-- ***** Header Area Start ***** -->
   <header class="header-area header-sticky">
-    <div class="container">
+    <div class="s">
         <div class="row">
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
                     <a href="index.html" class="logo">
-                        <img src="assets/images/logo.png" alt="">
+                        <img src="https://www.cadt.edu.kh/wp-content/uploads/2021/10/CADT-IDG-Logos-Navy_CADT-IDG-Lockup-2-English-2-small.png" alt=""width="300" height="70">
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
                         <li><a href="index.html" class="active">Home</a></li>
-                        <li><a href="explore.html">Explore</a></li>
+                        <li><a href="{{url('explore')}}">Explore</a></li>
                         <li><a href="details.html">Item Details</a></li>
-                        <li><a href="author.html">Author</a></li>
+                        
                         <li><a href="create.html">Create Yours</a></li>
 
 
                         @if (Route::has('login'))
                
                     @Auth
+
+                    <li>
+                        <a href="{{url('book_history')}}">My history</a>
+                    </li>
                     
                     <x-app-layout></x-app-layout>
                     

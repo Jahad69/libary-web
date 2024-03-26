@@ -49,4 +49,48 @@ class HomeController extends Controller
             return redirect()->back()->with('message','Not Enough Book Available');
         }
     }
+
+
+    public function book_history()
+    {
+
+        if (Auth::id()){
+
+            $userid = Auth::user()->id;
+
+            $data = Borrow::where('$userid','=','$userid');
+
+            return view('home.book_history',compact('data'));
+
+        }
+
+        return view ('home.book_history');
+    }
+
+    public function cancel_request($id)
+    {
+        $data = Borrow::find($id);
+
+        $data->delete();
+
+        return redirect()->back()->with('message','Book borrow cancel successfully');
+    }
+
+    public function explore()
+    {
+        $data = Book::all();
+
+
+
+        return view ('home.explore',compact('data'));
+    }
+
+    public function search(Request $request)
+    {
+        $search= $request->search;
+
+        $data = Book::where ('title', 'Like', '%'.$search.'%')->get();
+
+        return view ('home.explore',compact('data'));
+    }
 }

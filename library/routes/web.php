@@ -55,3 +55,20 @@ route::get('/edit_book/{id}',[Admincontroller::class,'edit_book']);
 route::post('/update_book/{id}',[Admincontroller::class,'update_book']);
 
 route::get('/borrow_books/{id}',[HomeController::class,'borrow_books']);
+
+route::get('/borrow_request',[Admincontroller::class,'borrow_request']);
+
+route::get('/approve_book/{id}',[Admincontroller::class,'approve_book']);
+
+route::get('/return_book/{id}',[Admincontroller::class,'return_book']);
+
+route::get('/rejected_book/{id}',[Admincontroller::class,'rejected_book']);
+
+route::get('/book_history',[HomeController::class,'book_history']);
+
+route::get('/cancel_request/{id}',[HomeController::class,'cancel_request']);
+
+route::get('/explore',[HomeController::class,'explore']);
+
+route::get('/search',[HomeController::class,'search']);
+

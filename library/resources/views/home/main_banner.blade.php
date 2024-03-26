@@ -18,10 +18,10 @@
 
 
         <div class="col-lg-6 align-self-center">
-          <div class="header-text">
-            <h6>Book is Knowledge</h6>
-            <h2>Knowledge is Power</h2>
-            <p>Library is a really cool and professional design for your websites. This HTML CSS template is based on Bootstrap v5 and it is designed for related web portals. Liberty can be freely downloaded from github</p>
+          <div class="header-text" >
+            <h6 >Book is Knowledge</h6>
+            <h2 style ="color:orange">Hello wellcome to CADT library</h2>
+            <p style ="color:orange">Read your book and gain Knowledge for free here!</p>
             <div class="buttons">
               <div class="border-button">
                 <a href="explore.html">Explore Top Books</a>
@@ -35,10 +35,10 @@
         <div class="col-lg-5 offset-lg-1">
           <div class="">
             <div class="item">
-              <img src="assets/images/banner.png" alt="">
+              <img src="" alt="">
             </div>
             <div class="item">
-              <img src="assets/images/banner2.png" alt="">
+              <img src="" alt="">
             </div>
           </div>
         </div>
