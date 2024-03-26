@@ -50,7 +50,7 @@
                 <div class="statistic-block block">
                   <div class="progress-details d-flex align-items-end justify-content-between">
                     <div class="title">
-                      <div class="icon"><i class="icon-writing-whiteboard"></i></div><strong>Returned Books</strong>
+                      <div class="icon"><i class="icon-paper-and-pencil"></i></div><strong>Returned Books</strong>
                     </div>
                     <div class="number dashtext-4">{{$returned}}</div>
                   </div>

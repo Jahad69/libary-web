@@ -64,7 +64,7 @@
                   <span style="color:red">{{$data->Book->quantity}}</span>
 
                   @endif
-                  @if($data->status == 'return')
+                  @if($data->status == 'returned')
 
                   <span style="color:green">{{$data->Book->quantity}}</span>
 
