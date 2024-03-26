@@ -42,15 +42,15 @@
         <div class="row" style="margin: 30px;">
             
         
-        <div class="col-md-8">
+        <div class="col-md-10">
 
-        <input class="form-control" type="search" name="search" placeholder="Search for book title, auther name , category ">
+        <input class="form-control" type="search" name="search" placeholder="Search for book title ">
 
         </div>
         
-        <div class="col-md-4">
+        <div class="col-md-2">
 
-            <input  class ="btn btn-warning"type="submit" value ="Search">
+            <input  class ="btn btn-primary" type="submit" value ="Search">
         </div>
         
 

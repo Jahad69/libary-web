@@ -10,16 +10,20 @@
                   <h2>Browse Through Book <em>Categories</em> Here.</h2>
                 </div>
               </div>
+
+              @foreach($category as $category)
               <div class="col-lg-2 col-sm-6">
                 <div class="item">
-                  <div class="icon">
-                    <img src="assets/images/icon-01.png" alt="">
+                  <div class="">
+                    <img src="assets/images/book-cate1.avif" style="border-radius: 10%;" alt="">
                   </div>
-                  <h4>Motivational</h4>
+                  <h4>{{$category->cat_title}}</h4>
                   
                 </div>
               </div>
-              <div class="col-lg-2 col-sm-6">
+              @endforeach
+
+              <!-- <div class="col-lg-2 col-sm-6">
                 <div class="item">
                   <div class="icon">
                     <img src="assets/images/icon-02.png" alt="">
@@ -63,7 +67,8 @@
                   <h4>Romance</h4>
                   
                 </div>
-              </div>
+              </div> -->
+              
             </div>
           </div>
         </div>

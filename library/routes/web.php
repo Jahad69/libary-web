@@ -56,6 +56,8 @@ route::post('/update_book/{id}',[Admincontroller::class,'update_book'])->middlew
 
 route::get('/book_details/{id}',[HomeController::class,'book_details']);
 
+route::get('/details',[HomeController::class,'details']);
+
 route::get('/borrow_books/{id}',[HomeController::class,'borrow_books']);
 
 route::get('/borrow_request',[Admincontroller::class,'borrow_request'])->middleware(['auth','admin']);

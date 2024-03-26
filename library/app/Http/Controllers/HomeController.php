@@ -14,7 +14,8 @@ class HomeController extends Controller
     public function index() 
     {
         $data = Book::all();
-        return view('home.index', compact('data'));
+        $category = Category::all();
+        return view('home.index', compact('data','category'));
     }
 
     public function borrow_books($id){
@@ -49,6 +50,15 @@ class HomeController extends Controller
         else{
             return redirect()->back()->with('message','Not Enough Book Available');
         }
+    }
+
+    public function details(){
+        $data = Book::all();
+
+        $category = Category::all();
+
+        return view ('home.details',compact('data','category'));
+        
     }
 
 

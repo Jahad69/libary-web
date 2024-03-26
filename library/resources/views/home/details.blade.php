@@ -21,7 +21,7 @@
         </div>
         <div class="col-lg-12">
           <div class="">
-          
+          @foreach($data as $data)
             <div class="">
               <div class="item">
                 <div class="left-image">
@@ -37,7 +37,7 @@
                   <span class="bid">
                     Current Available<br><strong>{{$data->quantity}}</strong><br> 
                   </span>
-                  
+
                   <br>
 
                   <p class="bid">
@@ -53,7 +53,7 @@
                 </div>
               </div>
             </div>
-            
+          @endforeach  
 
 
           </div>
