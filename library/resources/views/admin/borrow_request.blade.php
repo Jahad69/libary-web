@@ -40,7 +40,6 @@
               <tr>
                 <th>User Name</th>
                 <th>Email</th>
-                <th>Phone</th>
                 <th>Book title </th>
                 <th>Quantity</th>
                 <th>Borrow status</th>
@@ -50,9 +49,8 @@
               @foreach($data as $data)
 
                <tr>
-               <td>{{$data->user->Name}}</td>
-                <td>{{$data->user->Email}}</td>
-                <td>{{$data->user->Phone}}</td>
+               <td>{{$data->user->name}}</td>
+                <td>{{$data->user->email}}</td>
                 <td>{{$data->Book->title}}</td>
                 <td>
                   @if($data->status == 'approved')
