@@ -69,7 +69,7 @@ class HomeController extends Controller
 
             $userid = Auth::user()->id;
 
-            $data = Borrow::where('$userid','=','$userid');
+            $data = Borrow::where('user_id','=',$userid)->get();
 
             return view('home.book_history',compact('data'));
 

@@ -63,7 +63,7 @@
 
         <tr>
             <th>Book Name</th>
-            <th>Book Auther</th>
+            <th>Book Author</th>
             <th>Book Status</th>
             <th>Book Image</th>
             <th>Cancel Request</th>
@@ -72,7 +72,7 @@
         @foreach($data as $data)
         <tr>
             <td>{{$data->book->title}}</td>
-            <td>{{$data->book->auther_name}}</td>
+            <td>{{$data->book->author_name}}</td>
             <td>{{$data->status}}</td>
             <td>
                 <img class="book_img" src="book/{{$data->book->book_img}}" alt="">
@@ -81,7 +81,7 @@
 
                 @if($data->status == 'Applied')
 
-                <a href="{{url('cancel_request','$data->id')}}" class="btn btn-warning">Cancel </a>
+                <a href="{{url('cancel_request',$data->id)}}" class="btn btn-warning">Cancel </a>
 
                 @else
                 <p style ="color : white; font-weight: bold;">Not Allowed</p>
