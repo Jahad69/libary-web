@@ -30,39 +30,41 @@ Route::middleware([
 });
 
 
-route::get('/home',[Admincontroller::class,'index']);
+route::get('/home',[Admincontroller::class,'index'])->middleware(['auth','admin']);
 
-route::get('/category_page',[Admincontroller::class,'category_page']);
+route::get('/category_page',[Admincontroller::class,'category_page'])->middleware(['auth','admin']);
 
-route::post('/add_category',[Admincontroller::class,'add_category']);
+route::post('/add_category',[Admincontroller::class,'add_category'])->middleware(['auth','admin']);
 
-route::get('/cat_delete/{id}',[Admincontroller::class,'cat_deletes']);
+route::get('/cat_delete/{id}',[Admincontroller::class,'cat_deletes'])->middleware(['auth','admin']);
 
-route::get('/edit_category/{id}',[Admincontroller::class,'edit_category']);
+route::get('/edit_category/{id}',[Admincontroller::class,'edit_category'])->middleware(['auth','admin']);
 
-route::post('/update_category/{id}',[Admincontroller::class,'update_category']);
+route::post('/update_category/{id}',[Admincontroller::class,'update_category'])->middleware(['auth','admin']);
 
-route::get('/add_book',[Admincontroller::class,'add_book']);
+route::get('/add_book',[Admincontroller::class,'add_book'])->middleware(['auth','admin']);
 
-route::post('/store_book',[Admincontroller::class,'store_book']);
+route::post('/store_book',[Admincontroller::class,'store_book'])->middleware(['auth','admin']);
 
-route::get('/show_book',[Admincontroller::class,'show_book']);
+route::get('/show_book',[Admincontroller::class,'show_book'])->middleware(['auth','admin']);
 
-route::get('/book_delete/{id}',[Admincontroller::class,'book_delete']);
+route::get('/book_delete/{id}',[Admincontroller::class,'book_delete'])->middleware(['auth','admin']);
 
-route::get('/edit_book/{id}',[Admincontroller::class,'edit_book']);
+route::get('/edit_book/{id}',[Admincontroller::class,'edit_book'])->middleware(['auth','admin']);
 
-route::post('/update_book/{id}',[Admincontroller::class,'update_book']);
+route::post('/update_book/{id}',[Admincontroller::class,'update_book'])->middleware(['auth','admin']);
+
+route::get('/book_details/{id}',[HomeController::class,'book_details']);
 
 route::get('/borrow_books/{id}',[HomeController::class,'borrow_books']);
 
-route::get('/borrow_request',[Admincontroller::class,'borrow_request']);
+route::get('/borrow_request',[Admincontroller::class,'borrow_request'])->middleware(['auth','admin']);
 
-route::get('/approve_book/{id}',[Admincontroller::class,'approve_book']);
+route::get('/approve_book/{id}',[Admincontroller::class,'approve_book'])->middleware(['auth','admin']);
 
-route::get('/return_book/{id}',[Admincontroller::class,'return_book']);
+route::get('/return_book/{id}',[Admincontroller::class,'return_book'])->middleware(['auth','admin']);
 
-route::get('/rejected_book/{id}',[Admincontroller::class,'rejected_book']);
+route::get('/rejected_book/{id}',[Admincontroller::class,'rejected_book'])->middleware(['auth','admin']);
 
 route::get('/book_history',[HomeController::class,'book_history']);
 
@@ -72,3 +74,4 @@ route::get('/explore',[HomeController::class,'explore']);
 
 route::get('/search',[HomeController::class,'search']);
 
+route::get('/cat_search/{id}',[HomeController::class,'cat_search']);
