@@ -19,7 +19,7 @@
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
                     <a href="{{url('/')}}" class="logo">
-                        <img src="assets/images/cadt-logo.png" style="border-radius: 50%;" alt=""width="100" height="100">
+                        <img src="https://www.cadt.edu.kh/wp-content/uploads/2021/10/CADT-IDT-Logos-Navy_CADT-IDT-Lockup-2-English-2-small.png" alt="" width="" height="">
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
